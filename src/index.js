@@ -12,13 +12,13 @@ export function descriptionQuestion() {
         return false;
       }
       try {
-        const name = JSON.parse(await readFile(`${directory}/package.json`, 'utf8')).name;
+        const name = JSON.parse(await readFile(`${ directory }/package.json`, 'utf8')).name;
         if (name) {
           answers.name = name;
           return false;
         }
         return true;
-      } catch (error) {
+      } catch (packageJsonError) {
         return true;
       }
     },

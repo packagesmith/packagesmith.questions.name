@@ -1,14 +1,14 @@
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
 chai.use(chaiSpies).should();
-import nameQuestion from '../src/';
 import fileSystem from 'fs-promise';
+import nameQuestion from '../src/';
 describe('nameQuestion', () => {
 
   it('returns an object with expected keys', () => {
     nameQuestion()
       .should.be.an('object')
-      .with.keys([ 'name', `message`, `default`, `when` ]);
+      .with.keys([ 'name', 'message', 'default', 'when' ]);
   });
 
   describe('default function', () => {
